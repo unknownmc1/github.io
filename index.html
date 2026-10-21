@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNKNOWN MC — GOD BLESS | Fall 2026</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Arial Black', 'Impact', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* ===== GLITCH TEXT ===== */
+    .glitch {
+      position: relative;
+      font-size: clamp(2.8rem, 10vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #fff;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch::before {
+      left: 3px;
+      text-shadow: -3px 0 #ff00c1;
+      clip: rect(24px, 550px, 90px, 0);
+      animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+    }
+
+    .glitch::after {
+      left: -3px;
+      text-shadow: -3px 0 #00fff9;
+      clip: rect(85px, 550px, 140px, 0);
+      animation: glitch-anim 2.8s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-anim {
+      0%   { clip: rect(42px, 9999px, 44px, 0); }
+      5%   { clip: rect(12px, 9999px, 59px, 0); }
+      10%  { clip: rect(48px, 9999px, 29px, 0); }
+      15%  { clip: rect(42px, 9999px, 73px, 0); }
+      20%  { clip: rect(63px, 9999px, 27px, 0); }
+      25%  { clip: rect(34px, 9999px, 55px, 0); }
+      30%  { clip: rect(86px, 9999px, 73px, 0); }
+      35%  { clip: rect(20px, 9999px, 20px, 0); }
+      40%  { clip: rect(26px, 9999px, 60px, 0); }
+      45%  { clip: rect(25px, 9999px, 66px, 0); }
+      50%  { clip: rect(57px, 9999px, 98px, 0); }
+      55%  { clip: rect(5px, 9999px, 46px, 0); }
+      60%  { clip: rect(82px, 9999px, 31px, 0); }
+      65%  { clip: rect(54px, 9999px, 27px, 0); }
+      70%  { clip: rect(28px, 9999px, 99px, 0); }
+      75%  { clip: rect(45px, 9999px, 69px, 0); }
+      80%  { clip: rect(23px, 9999px, 85px, 0); }
+      85%  { clip: rect(54px, 9999px, 84px, 0); }
+      90%  { clip: rect(45px, 9999px, 47px, 0); }
+      95%  { clip: rect(37px, 9999px, 20px, 0); }
+      100% { clip: rect(4px, 9999px, 91px, 0); }
+    }
+
+    @keyframes glitch-anim-2 {
+      0%   { clip: rect(65px, 9999px, 100px, 0); }
+      5%   { clip: rect(52px, 9999px, 74px, 0); }
+      10%  { clip: rect(79px, 9999px, 85px, 0); }
+      15%  { clip: rect(75px, 9999px, 5px, 0); }
+      20%  { clip: rect(67px, 9999px, 61px, 0); }
+      25%  { clip: rect(14px, 9999px, 79px, 0); }
+      30%  { clip: rect(1px, 9999px, 66px, 0); }
+      35%  { clip: rect(86px, 9999px, 30px, 0); }
+      40%  { clip: rect(23px, 9999px, 98px, 0); }
+      45%  { clip: rect(85px, 9999px, 72px, 0); }
+      50%  { clip: rect(71px, 9999px, 75px, 0); }
+      55%  { clip: rect(2px, 9999px, 48px, 0); }
+      60%  { clip: rect(30px, 9999px, 16px, 0); }
+      65%  { clip: rect(59px, 9999px, 50px, 0); }
+      70%  { clip: rect(41px, 9999px, 62px, 0); }
+      75%  { clip: rect(2px, 9999px, 82px, 0); }
+      80%  { clip: rect(47px, 9999px, 94px, 0); }
+      85%  { clip: rect(3px, 9999px, 8px, 0); }
+      90%  { clip: rect(26px, 9999px, 55px, 0); }
+      95%  { clip: rect(42px, 9999px, 73px, 0); }
+      100% { clip: rect(38px, 9999px, 15px, 0); }
+    }
+
+    .artist {
+      font-size: clamp(1.1rem, 3.5vw, 1.8rem);
+      letter-spacing: 8px;
+      margin-bottom: 12px;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+
+    .date {
+      font-size: clamp(1rem, 2.8vw, 1.4rem);
+      letter-spacing: 6px;
+      margin-top: 18px;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    /* ===== VIDEO PLACEHOLDER ===== */
+    .video-container {
+      width: 100%;
+      max-width: 720px;
+      margin: 50px auto 40px;
+      aspect-ratio: 16 / 9;
+      background: #111;
+      border: 1px solid #333;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(255, 0, 193, 0.15);
+    }
+
+    .video-container iframe,
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Плейсхолдер, пока видео нет */
+    .video-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .video-placeholder span {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      opacity: 0.4;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 30px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      color: #444;
+      text-transform: uppercase;
+    }
+
+    /* Мобильная адаптация */
+    @media (max-width: 600px) {
+      .glitch {
+        letter-spacing: 2px;
+      }
+      .artist {
+        letter-spacing: 4px;
+      }
+      .video-container {
+        margin: 35px auto 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="artist">UNKNOWN MC</div>
+  
+  <h1 class="glitch" data-text="GOD BLESS">GOD BLESS</h1>
+  
+  <div class="date">Fall 2026</div>
+
+  <!-- ===== МЕСТО ПОД ВИДЕО ===== -->
+  <div class="video-container">
+    <!-- 
+      Когда будет видео — замени весь блок .video-placeholder на:
+      
+      <iframe 
+        src="https://www.youtube.com/embed/ТВОЙ_ID" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      
+      или
+      
+      <video controls autoplay muted loop>
+        <source src="твой-трейлер.mp4" type="video/mp4">
+      </video>
+    -->
+    
+    <div class="video-placeholder">
+      <span>▶</span>
+      место под видео / trailer
+    </div>
+  </div>
+
+  <footer>© 2026 UNKNOWN MC</footer>
+
+</body>
+</html>
